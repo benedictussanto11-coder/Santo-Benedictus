@@ -13,6 +13,7 @@
             margin: 0;
             background: #f5f5f5;
             color: #333;
+            line-height: 1.6;
         }
 
         /* NAVBAR */
@@ -31,7 +32,7 @@
             justify-content: center;
             margin: 0;
             padding: 0;
-            flex-wrap: wrap; /* Agar rapi di HP */
+            flex-wrap: wrap;
         }
 
         nav ul li { margin: 5px 15px; }
@@ -47,7 +48,6 @@
             border-bottom: 2px solid transparent;
         }
 
-        /* Efek saat di-hover atau menu Aktif */
         nav ul li a:hover, nav ul li a.active { 
             color: #d4af37; 
             border-bottom: 2px solid #d4af37;
@@ -64,14 +64,13 @@
 
         /* SECTION MANAGEMENT */
         .content-section {
-            display: none; /* Sembunyikan semua secara default */
+            display: none;
             padding: 40px 20px;
             max-width: 1000px;
             margin: auto;
-            min-height: 300px;
+            min-height: 400px;
         }
 
-        /* Menampilkan section yang aktif */
         .content-section.active {
             display: block; 
             animation: fadeIn 0.6s ease;
@@ -90,6 +89,38 @@
             margin-bottom: 25px;
         }
 
+        /* GALERI MEDIA */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover { transform: translateY(-5px); }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #0b2c55;
+        }
+
         /* TABEL & CARD STYLE */
         .table-container { overflow-x: auto; margin-top: 20px; }
         table {
@@ -98,7 +129,6 @@
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
         table th, table td { border: 1px solid #eee; padding: 15px; text-align: center; }
         table th { background: #0b2c55; color: white; }
@@ -115,6 +145,7 @@
             border-radius: 12px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             border-top: 4px solid #d4af37;
+            margin-bottom: 20px;
         }
 
         /* FOOTER & WA */
@@ -149,20 +180,22 @@
 
     <section id="beranda" class="content-section active">
         <h2>Profil & Sejarah Singkat</h2>
-        <p> <li>Gereja ST. BENEDICTUS Stasi Sidobasuki Sejarah
-Stasi Santo Benediktus pada mulanya hanya terdiri dari 10 kepala keluarga (tahun 1973). Dalam perjalanan waktu, peningkatan jumlah umat terjadi meskipun dengan sangat lambat dan hingga saat ini sudah memiliki 40 kepala keluarga. Dalam perkembangannya, umat juga mengalami kendala dari warga sekitar salah satunya berupa penolakan untuk mendirikan Kapel sehingga terhenti hingga 10 tahun lamanya. Sekalipun Kapel belum bisa diwujudkan, umat tidak mengalami kelesuan, melainkan tetap tekun dalam doa dan ibadat di rumah rumah umat setempat.
-Akhirnya di tahun 1983, secara swadaya dan gotong-royong, umat memberanikan diri untuk melanjutkan pembangunan kapel hingga dapat ditempati sampai sekarang. Pengurus stasi beserta umat tetap terus bekerja keras guna menyelesaikan bangunan gereja layak dipergunakan, serta melengkapi dengan menambah bangunan yang dapat dipergunakan untuk ke bersama yaitu antara lain: Sakristi, Bejana Baptis, Ruang Pengakuan Dosa dan Kamar Mandi/WC.
-Selain itu, ada catatan menarik dari Stasi Sidobasuki mengalami perpindahan reksa pastoral beberapa kali. Pada mulanya reksa pastoral dilayani olen romo dari paroki Metro, kemudian dipindahkan ke Paroki Tanjung Karang, lalu ke Paroki Bandar Jaya, dan kembali ke Paroki Metro sampai sekarang.. Kami berkomitmen untuk terus bertumbuh dalam persaudaraan dan pelayanan kasih.</p>
-      
         <div class="card">
-            <p>  <p><strong>Santo Benediktus:</strong> Bapak Monastisisme Barat yang mengajarkan prinsip <em>"Ora et Labora"</em> (Berdoa dan Bekerja). Santo Benediktus dari Nursia (480–547M) adalah pendiri monastisisme Barat dan penulis Regula Benedicti (Peraturan Santo Benediktus) yang menekankan keseimbangan doa dan kerja (ora et labora). Ia mendirikan 12 biara, termasuk pusatnya di Monte Cassino, Italia. Ia dihormati sebagai santo pelindung Eropa. 
-Berikut adalah poin-poin penting sejarah hidupnya:
-- Masa Muda dan Pertapaan: Lahir di Nursia, Italia, ia meninggalkan studinya di Roma yang korup untuk hidup sebagai pertapa di gua Subiaco selama tiga tahun.
-                
-<li>Pendiri Biara: Reputasinya membawa banyak pengikut. Ia mendirikan 12 biara di Subiaco sebelum mendirikan biara terkenal di Monte Cassino sekitar tahun 529 M.             
-<li>Regula Benedicti: Ia menulis peraturan hidup membiara yang menekankan kerendahan hati, ketaatan, moderasi, serta keseimbangan antara ibadat dan pekerjaan fisik.              
-<li>Wafat dan Penghormatan: Benediktus wafat pada 21 Maret 547 M. Ia ditetapkan sebagai santo pelindung Eropa oleh Paus Paulus VI pada tahun 1966.
-            </p><strong>Peringatan wajib St. Benediktus dirayakan setiap tanggal 11 Juli.</strong>
+            <h3>Sejarah Stasi</h3>
+            <p>Stasi Santo Benediktus pada mulanya hanya terdiri dari 10 kepala keluarga (tahun 1973). Meskipun perkembangan jumlah umat berjalan perlahan, kini telah mencapai 40 kepala keluarga.</p>
+            <p>Umat sempat mengalami kendala pembangunan Kapel selama 10 tahun, namun tetap tekun berdoa di rumah-rumah. Akhirnya, pada tahun 1983, melalui gotong-royong, pembangunan Kapel berhasil dilanjutkan dan kini telah dilengkapi dengan Sakristi, Bejana Baptis, serta Ruang Pengakuan Dosa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mengenal Santo Benediktus</h3>
+            <p><strong>Santo Benediktus dari Nursia (480–547 M)</strong> adalah Bapak Monastisisme Barat dengan prinsip <em>"Ora et Labora"</em> (Berdoa dan Bekerja).</p>
+            <ul>
+                <li><strong>Masa Muda:</strong> Hidup sebagai pertapa di gua Subiaco.</li>
+                <li><strong>Pendiri Biara:</strong> Mendirikan 12 biara, termasuk Monte Cassino.</li>
+                <li><strong>Regula Benedicti:</strong> Peraturan hidup yang menekankan kerendahan hati dan keseimbangan hidup.</li>
+                <li><strong>Pelindung Eropa:</strong> Ditetapkan oleh Paus Paulus VI pada tahun 1966.</li>
+            </ul>
+            <p><strong>Peringatan wajib dirayakan setiap tanggal 11 Juli.</strong></p>
         </div>
     </section>
 
@@ -206,17 +239,30 @@ Berikut adalah poin-poin penting sejarah hidupnya:
 
     <section id="media" class="content-section">
         <h2>Media & Galeri</h2>
-        <div class="card" style="text-align: center; padding: 50px;">
-            url('https://thumbs2.imgbox.com/9d/ab/9jw6GP0k_t.jpeg')
+        <p>Dokumentasi kegiatan dan bangunan Gereja St. Benedictus Stasi Sidobasuki.</p>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://thumbs2.imgbox.com/9d/ab/9jw6GP0k_t.jpeg" alt="Gereja 1">
+                <div class="gallery-caption">Tampilan Depan Gereja</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://thumbs2.imgbox.com/d3/84/9n1ZzY7Q_t.jpeg" alt="Gereja 2">
+                <div class="gallery-caption">Interior & Altar</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=1000" alt="Ibadah">
+                <div class="gallery-caption">Suasana Peribadatan</div>
+            </div>
         </div>
     </section>
 
     <section id="kontak" class="content-section">
         <h2>Kontak & Lokasi</h2>
-        <p><strong>Alamat:</strong> Jl. Lintas Sumatera KM.36 , Kabupaten Pesawaran, Lampung</p>
+        <p><strong>Alamat:</strong> Jl. Lintas Sumatera KM.36, Kabupaten Pesawaran, Lampung</p>
         <p><strong>Email:</strong> stbenedictus.sidobasuki@gmail.com</p>
         <div style="border-radius: 12px; overflow: hidden; margin-top: 20px; background: #ddd; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc;">
-            <p>Peta Lokasi Google Maps</p>
+            <p>Peta Lokasi (Gunakan Embed Google Maps di sini)</p>
         </div>
     </section>
 
@@ -232,26 +278,26 @@ Berikut adalah poin-poin penting sejarah hidupnya:
 
     <script>
         function showSection(sectionId) {
-            // 1. Sembunyikan SEMUA section terlebih dahulu
+            // 1. Sembunyikan semua section
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // 2. Tampilkan HANYA section yang diklik
+            // 2. Tampilkan yang dipilih
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.classList.add('active');
             }
 
-            // 3. Update style menu navigasi (warna emas)
+            // 3. Update link menu aktif
             const navLinks = document.querySelectorAll('nav ul li a');
             navLinks.forEach(link => {
                 link.classList.remove('active');
             });
             document.getElementById('nav-' + sectionId).classList.add('active');
 
-            // 4. Otomatis scroll ke area konten agar pengguna langsung melihat isinya
+            // 4. Scroll ke posisi konten
             window.scrollTo({
                 top: document.querySelector('header').offsetHeight - 20,
                 behavior: 'smooth'
